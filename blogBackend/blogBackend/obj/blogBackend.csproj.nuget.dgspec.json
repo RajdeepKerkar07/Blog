@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\RAKERKAR\\OneDrive - Capgemini\\Desktop\\Blog\\Blog\\blogBackend\\blogBackend\\blogBackend.csproj": {}
+    "C:\\Users\\RAKERKAR\\OneDrive - Capgemini\\Desktop\\Blog\\blogBackend\\blogBackend\\blogBackend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\RAKERKAR\\OneDrive - Capgemini\\Desktop\\Blog\\Blog\\blogBackend\\blogBackend\\blogBackend.csproj": {
+    "C:\\Users\\RAKERKAR\\OneDrive - Capgemini\\Desktop\\Blog\\blogBackend\\blogBackend\\blogBackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\RAKERKAR\\OneDrive - Capgemini\\Desktop\\Blog\\Blog\\blogBackend\\blogBackend\\blogBackend.csproj",
+        "projectUniqueName": "C:\\Users\\RAKERKAR\\OneDrive - Capgemini\\Desktop\\Blog\\blogBackend\\blogBackend\\blogBackend.csproj",
         "projectName": "blogBackend",
-        "projectPath": "C:\\Users\\RAKERKAR\\OneDrive - Capgemini\\Desktop\\Blog\\Blog\\blogBackend\\blogBackend\\blogBackend.csproj",
+        "projectPath": "C:\\Users\\RAKERKAR\\OneDrive - Capgemini\\Desktop\\Blog\\blogBackend\\blogBackend\\blogBackend.csproj",
         "packagesPath": "C:\\Users\\RAKERKAR\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\RAKERKAR\\OneDrive - Capgemini\\Desktop\\Blog\\Blog\\blogBackend\\blogBackend\\obj\\",
+        "outputPath": "C:\\Users\\RAKERKAR\\OneDrive - Capgemini\\Desktop\\Blog\\blogBackend\\blogBackend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\RAKERKAR\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,9 +40,37 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
+            },
+            "System.Security.Cryptography.ProtectedData": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             }
           },
           "imports": [

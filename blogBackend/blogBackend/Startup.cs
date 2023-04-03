@@ -1,16 +1,13 @@
+using blogBackend.Data;
+using blogBackend.Repositories;
+using blogBackend.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace blogBackend
 {
@@ -28,6 +25,10 @@ namespace blogBackend
         {
 
             services.AddControllers();
+            services.AddDbContext<BlogDbContext>(
+                options => options.UseSqlServer(Configuration.GetConnectionString("Conn"))
+                );
+            services.AddScoped<IUser, User>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "blogBackend", Version = "v1" });
