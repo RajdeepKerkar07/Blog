@@ -1,0 +1,24 @@
+<div class="bg-yellow-200 flex items-center min-h-[80vh] min-w-screen">
+    <div class="bg-white min-h-[65vh] rounded-xl w-[80vw] ml-10">
+        <label for="loginform" class="text-4xl mt-2 text-gray-400 block ml-52 p-1">Login</label>
+        <form name="loginform">
+            <div class="ml-16">
+                <div class="mx-12 mt-8">
+                    <label for="Username" class="block text-sm">Username</label>
+                    <input type="text" name="Username" class="rounded border-b-2 w-[40%] border-black">
+                </div>
+                <div class="mx-12 mt-8">
+                    <label for="Password" class="block text-sm">Password</label>
+                    <input type="password" name="Password" class="rounded border-b-2 w-[40%] border-black">
+                </div>
+            </div>
+            <div class="bg-cyan-500/50 w-[10%] inline-block text-center my-12 p-1 rounded mx-52">
+                <input type="submit" value="Login">
+            </div>
+        </form>
+        <p class="ml-24">Don't have an account? <a routerLink="/register" class="text-cyan-500">Register</a> Here!</p>
+        <div class="right-28 bottom-16 absolute">
+            <img src="../../assets/images/login.svg" class="h-[70vh] w-full">
+        </div>
+    </div>
+</div>
