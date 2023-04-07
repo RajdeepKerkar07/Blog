@@ -16,4 +16,10 @@ export class UserService {
       this.baseApiUrl + 'api/User/Register', user,{responseType:'text'}
     );
   }
+
+  loginUser(user:any){
+    return this.http.post(
+      this.baseApiUrl + 'api/User/Login',user,{responseType:'text'}
+    )
+  }
 }

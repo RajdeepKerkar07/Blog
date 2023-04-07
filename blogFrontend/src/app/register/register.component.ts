@@ -29,6 +29,7 @@ export class RegisterComponent {
 
   Register(){
     this.user.registerUser(this.RegisterForm.value).subscribe((result)=>{
+      if(result=="Account Created"){
         Swal.fire({
           icon:'success',
           title: 'Success',
@@ -38,6 +39,7 @@ export class RegisterComponent {
             this.router.navigate(['/login'])
           }
         })
+      }
       },
       (error)=>{
         if(error.error=='Account already exists'){

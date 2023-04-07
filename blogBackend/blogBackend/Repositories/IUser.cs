@@ -8,6 +8,7 @@ namespace blogBackend.Repositories
 {
     public interface IUser
     {
-        Task<User> Register(User model);
+        Task<string> Register(User model);
+        Task<string> Login(LoginUser model);
     }
 }
