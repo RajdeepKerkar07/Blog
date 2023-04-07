@@ -29,6 +29,7 @@ namespace blogBackend
                 options => options.UseSqlServer(Configuration.GetConnectionString("Conn"))
                 );
             services.AddScoped<IUser, User>();
+            services.AddScoped<IPost, Post>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "blogBackend", Version = "v1" });
