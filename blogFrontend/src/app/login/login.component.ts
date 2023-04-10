@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -20,13 +20,18 @@ export class LoginComponent{
   }
 
   LoginForm = new FormGroup({
-    Username: new FormControl(''),
-    Password: new FormControl('')
+    Username: new FormControl('',[Validators.required]),
+    Password: new FormControl('',[Validators.required])
   })
+
+  get Username(): FormControl{
+    return this.LoginForm.get('Username') as FormControl;
+  }
 
   Login(){
     this.user.loginUser(this.LoginForm.value).subscribe((result)=>{
       if(result=="Authenticated"){
+        localStorage.setItem('username', this.Username.value);
         this.router.navigate(['/'])
       }
       },

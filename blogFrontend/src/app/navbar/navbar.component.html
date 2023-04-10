@@ -5,16 +5,28 @@
   <div class="">
     <ul>
       <li
-        class="px-8 py-1 rounded-xl items-center"
+        class="px-8 py-1 rounded-xl space-x-12 inline-block center "
       >
         <a routerLink="">Home</a>
+      </li>
+      <li
+        class="px-8 py-1 rounded-xl space-x-12 inline-block"
+      >
+        <a routerLink="about">About</a>
+      </li>
+      <li
+        class="px-8 py-1 rounded-xl space-x-12 inline-block"
+      >
+        <a routerLink="contact">Contact Us</a>
       </li>
     </ul>
   </div>
   <div class="mx-16">
     <ul class="flex space-x-12">
-      <li><a routerLink="register">Register</a></li>
-      <li><a routerLink="login">Login</a></li>
+      <li *ngIf="!isLoggedIn"><a routerLink="register">Register</a></li>
+      <li *ngIf="!isLoggedIn"><a routerLink="login">Login</a></li>
+      <li *ngIf="isLoggedIn">Welcome, {{this.user}}!</li>
+      <li *ngIf="isLoggedIn"><a routerLink="login" (click)="logout()">Logout</a></li>
     </ul>
   </div>
 </div>

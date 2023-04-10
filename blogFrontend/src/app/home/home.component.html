@@ -1,1 +1,18 @@
-<p>home works!</p>
+<div class="bg-yellow-200 flex min-h-[80vh] min-w-screen items-start m-0">
+    <div id="style-7" class="bg-white max-h-[75vh] rounded-xl w-[70vw] mt-4 ml-4 drop-shadow-2xl posts">
+        <div *ngFor="let post of posts" class="w-[95%] rounded bg-white drop-shadow-md container mx-auto mt-4 p-4">
+            <p class="text-2xl font-bold">{{post.title}}</p>
+            <p>{{post.description}}</p>
+            <p class="text-end text-gray-400">{{post.dateposted | date:'medium'}}</p>
+            <p class="text-sm text-right">{{post.author}}</p>
+        </div>
+    </div>
+    <div class="bg-white min-h-[40vh] rounded-xl w-[25vw] mt-4 ml-6 drop-shadow-2xl">
+        <div class="p-2 block text-center">Hey {{user}}, Create a new post here!</div>
+        <form [formGroup]="postForm" (ngSubmit)="post()">
+            <input type="text" formControlName="title" placeholder="Title" class="my-1 mx-2 min-w-[97%] px-8 py-2 rounded-xl">
+            <textarea type="text" formControlName="description" placeholder="Description" class=" my-1 mx-2 min-w-[97%] px-8 py-2 rounded-xl h-[100px]"></textarea>
+            <input type="submit" value="" class="icon bg-blue-300 block m-auto mb-4 p-2 rounded-xl">
+        </form>
+    </div>
+</div>
