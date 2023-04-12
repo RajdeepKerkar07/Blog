@@ -1,6 +1,7 @@
 <div class="bg-yellow-200 flex min-h-[80vh] min-w-screen items-start m-0">
     <div id="style-7" class="bg-white max-h-[75vh] rounded-xl w-[70vw] mt-4 ml-4 drop-shadow-2xl posts">
         <div *ngFor="let post of posts" class="w-[95%] rounded bg-white drop-shadow-md container mx-auto mt-4 p-4">
+            <a *ngIf="post.author == user" class="float-right top-0"><i class="fa fa-edit"></i></a>
             <p class="text-2xl font-bold">{{post.title}}</p>
             <p>{{post.description}}</p>
             <p class="text-end text-gray-400">{{post.dateposted | date:'medium'}}</p>

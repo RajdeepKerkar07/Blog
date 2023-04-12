@@ -10,5 +10,6 @@ namespace blogBackend.Repositories
     {
         Task<IEnumerable<Post>> GetAllPosts();
         Task<string> CreatePost(Post model);
+        Task<IEnumerable<Post>> GetPostsByAuthor(string author);
     }
 }

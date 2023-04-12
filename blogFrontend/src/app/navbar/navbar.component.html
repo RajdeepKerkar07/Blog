@@ -24,8 +24,8 @@
   <div class="mx-16">
     <ul class="flex space-x-12">
       <li *ngIf="!isLoggedIn"><a routerLink="register">Register</a></li>
-      <li *ngIf="!isLoggedIn"><a routerLink="login">Login</a></li>
-      <li *ngIf="isLoggedIn">Welcome, {{this.user}}!</li>
+      <li *ngIf="!isLoggedIn"><a routerLink="login">Login</a></li>  
+      <li *ngIf="isLoggedIn"><a [routerLink]="['profile',user]">Profile</a></li>
       <li *ngIf="isLoggedIn"><a routerLink="login" (click)="logout()">Logout</a></li>
     </ul>
   </div>

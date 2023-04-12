@@ -1,0 +1,31 @@
+<div class="bg-yellow-200 flex min-h-[80vh] min-w-screen items-start m-0">
+  <div
+    id="style-7"
+    class="bg-white max-h-[75vh] min-h-[75vh] rounded-xl w-[70vw] mt-4 ml-4 drop-shadow-2xl posts"
+  >
+    <h1
+      class="text-2xl text-center py-4 z-40 sticky top-0 bg-yellow-100 border-b-4 border-gray-700"
+    >
+      Your Posts
+    </h1>
+    <h1 *ngIf="noPosts" class="p-10 text-center text-lg text-gray-400">You didn't post anything yet!</h1>
+    <div
+      *ngFor="let post of posts"
+      class="w-[95%] rounded bg-white drop-shadow-md container mx-auto mt-4 p-4"
+    >
+      <a class="float-right top-0"><i class="fa fa-edit"></i></a>
+      <p class="text-2xl font-bold">{{ post.title }}</p>
+      <p>{{ post.description }}</p>
+      <p class="text-end text-gray-400">
+        {{ post.dateposted | date : "medium" }}
+      </p>
+    </div>
+  </div>
+  <div
+    class="bg-white min-h-[40vh] rounded-xl w-[25vw] mt-4 ml-6 drop-shadow-2xl"
+  >
+  <form class="form">
+
+  </form>
+</div>
+</div>

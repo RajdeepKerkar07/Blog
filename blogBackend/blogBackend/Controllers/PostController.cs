@@ -46,5 +46,16 @@ namespace blogBackend.Controllers
             catch (Exception) { throw; }
         }
         #endregion
+
+        #region Get Posts by Author
+        [HttpGet]
+        [Route("GetPostsByAuthor")]
+        public async Task<IActionResult> GetPostsByAuthor(string author)
+        {
+            var response = await post.GetPostsByAuthor(author);
+            if (response ==  null) { return BadRequest("No Posts"); }
+            else { return Ok(response); }
+        }
+        #endregion
     }
 }

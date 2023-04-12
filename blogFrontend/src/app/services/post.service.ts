@@ -4,22 +4,25 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/env/env.development';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PostService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   baseApiUrl: string = environment.baseApiUrl;
 
-  post(post:any){
-    return this.http.post(
-      this.baseApiUrl + 'api/Post/CreatePost', post, {responseType:'text'}
-    )
+  post(post: any) {
+    return this.http.post(this.baseApiUrl + 'api/Post/CreatePost', post, {
+      responseType: 'text',
+    });
   }
-  getPosts(){
+  getPosts() {
+    return this.http.get(this.baseApiUrl + 'api/Post/GetAllPosts');
+  }
+
+  getPostsByAuthor(author: any) {
     return this.http.get(
-      this.baseApiUrl + 'api/Post/GetAllPosts'
-    )
+      this.baseApiUrl + 'api/Post/GetPostsByAuthor?author=' + author
+    );
   }
 }
